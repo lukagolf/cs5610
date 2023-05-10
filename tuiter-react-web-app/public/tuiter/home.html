@@ -7,75 +7,105 @@
 </head>
 
 <body>
-    <h1>Tuiter</h1>
-    <h2>Home</h2>
+    <table>
 
-    <img height="48px" width="48px" src="profile-img.jpg" />
+        <tbody>
 
-    <form id="textarea">
-        <textarea cols="20" rows="2">What's happening?</textarea>
-    </form>
-    <select id="select-reply-permissions">
-        <option value="EVERYONE">Everyone can reply</option>
-        <option value="FOLLOWING">People you follow</option>
-        <option value="MENTIONED">Only people you mention</option>
-        <option selected value="EVERYONE">Everyone can reply</option>
-    </select>
-    <hr>
-    <input type="file" /> <button type="button">Tuit</button>
-    <hr>
+            <tr valign="top">
 
-    <ul>
-        <li> <a href="topic.html">Topic 345</a><br />
-            <img height="48px" width="48px" src="spacex-logo.jpg" />
-            <a href="profile.html">SpaceX</a> @SpaceX - 6h
-            <p>
-                @SpaceX Dragon spacecraft returns to Earth with @ISS_Research 
-                that could help us better understand neurodegenerative 
-                diseases, gene expression, & muscle atrophy. Undocking from the 
-                @Space_Station is at 9:05am ET (13:05UT). Watch:<br />
+                <td>
 
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/R9CNRYEr674"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
+                    <ul>
+                        <li> <a href="home.html">Home</a></li>
+                        <li> <a href="explore.html">Explore</a></li>
+                        <li> <a href="notifications.html">Notifications</a></li>
+                        <li> <a href="messages.html">Messages</a></li>
+                        <li> <a href="bookmarks.html">Bookmarks</a></li>
+                        <li> <a href="lists.html">Lists</a></li>
+                        <li> <a href="profile.html">Profile</a></li>
+                        <li> <a href="tuit.html">Tuit</a></li>
+                        <li> <a href="reply.html">Reply</a></li>
+                    </ul>
 
-            </p>
-            <a href="reply.html">Reply</a> 123 |
-            <a href="retuit.html">Retuit</a> 234 |
-            <a href="like.html">Like</a> 345 |
-            <a href="share.html">Share</a>
-        </li><br />
-        <li> <a href="topic.html">Topic 234</a><br />
-            <img height="48px" width="48px" src="atari-logo.jpg" />
-            <a href="profile.html">Alice</a> @alice - 4h
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus sapien tortor, feugiat eu lobortis nec, pellentesque
-                non lorem. Ut quam dolor, tempus et placerat id, laoreet quis
-                tortor. Duis sollicitudin commodo mollis. Integer eros risus,
-                lacinia non odio vel, suscipit dapibus quam.
-            </p>
-            <a href="reply.html">Reply</a> 123 |
-            <a href="retuit.html">Retuit</a> 234 |
-            <a href="like.html">Like</a> 345 |
-            <a href="share.html">Share</a>
-        </li><br />
-        <li> <a href="topic.html">Topic 123</a><br />
-            <img height="48px" width="48px" src="profile-img.jpg" />
-            <a href="profile.html">Luka</a> @luka - 2h
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus sapien tortor, feugiat eu lobortis nec, pellentesque
-                non lorem. Ut quam dolor, tempus et placerat id, laoreet quis
-                tortor. Duis sollicitudin commodo mollis. Integer eros risus,
-                lacinia non odio vel, suscipit dapibus quam.
-            </p>
-            <a href="reply.html">Reply</a> 123 |
-            <a href="retuit.html">Retuit</a> 234 |
-            <a href="like.html">Like</a> 345 |
-            <a href="share.html">Share</a>
-        </li>
-    </ul>
+                </td>
+
+                <td>
+                    <h1>Tuiter</h1>
+                    <h2>Home</h2>
+
+                    <img height="48px" width="48px" src="profile-img.jpg" />
+
+                    <form id="textarea">
+                        <textarea id="tuit-textarea" placeholder="What's happening?"></textarea>
+                    </form>
+                    <select id="select-reply-permissions">
+                        <option value="EVERYONE">Everyone can reply</option>
+                        <option value="FOLLOWING">People you follow</option>
+                        <option value="MENTIONED">Only people you mention</option>
+                        <option selected value="EVERYONE">Everyone can reply</option>
+                    </select>
+                    <hr>
+                    <input type="file" /> <button type="button">Tuit</button>
+                    <hr>
+
+                    <ul>
+                        <li> <a href="topic.html">Topic 345</a><br />
+                            <img height="48px" width="48px" src="spacex-logo.jpg" />
+                            <a href="profile.html">SpaceX</a> @SpaceX - 6h
+                            <p>
+                                @SpaceX Dragon spacecraft returns to Earth with @ISS_Research
+                                that could help us better understand neurodegenerative
+                                diseases, gene expression, & muscle atrophy. Undocking from the
+                                @Space_Station is at 9:05am ET (13:05UT). Watch:<br />
+
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/R9CNRYEr674"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+
+                            </p>
+                            <a href="reply.html">Reply</a> 123 |
+                            <a href="retuit.html">Retuit</a> 234 |
+                            <a href="like.html">Like</a> 345 |
+                            <a href="share.html">Share</a>
+                        </li><br />
+                        <li> <a href="topic.html">Topic 234</a><br />
+                            <img height="48px" width="48px" src="atari-logo.jpg" />
+                            <a href="profile.html">Alice</a> @alice - 4h
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Phasellus sapien tortor, feugiat eu lobortis nec, pellentesque
+                                non lorem. Ut quam dolor, tempus et placerat id, laoreet quis
+                                tortor. Duis sollicitudin commodo mollis. Integer eros risus,
+                                lacinia non odio vel, suscipit dapibus quam.
+                            </p>
+                            <a href="reply.html">Reply</a> 123 |
+                            <a href="retuit.html">Retuit</a> 234 |
+                            <a href="like.html">Like</a> 345 |
+                            <a href="share.html">Share</a>
+                        </li><br />
+                        <li> <a href="topic.html">Topic 123</a><br />
+                            <img height="48px" width="48px" src="profile-img.jpg" />
+                            <a href="profile.html">Luka</a> @luka - 2h
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Phasellus sapien tortor, feugiat eu lobortis nec, pellentesque
+                                non lorem. Ut quam dolor, tempus et placerat id, laoreet quis
+                                tortor. Duis sollicitudin commodo mollis. Integer eros risus,
+                                lacinia non odio vel, suscipit dapibus quam.
+                            </p>
+                            <a href="reply.html">Reply</a> 123 |
+                            <a href="retuit.html">Retuit</a> 234 |
+                            <a href="like.html">Like</a> 345 |
+                            <a href="share.html">Share</a>
+                        </li>
+                    </ul>
+                </td>
+        </tbody>
+
+    </table>
+
 </body>
+
+</html>
