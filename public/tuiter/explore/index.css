@@ -9,7 +9,7 @@ body {
     padding-left: 20px;
 }
 
-.search-container {
+.wd-search-container {
     display: flex;
     align-items: center;
     background-color: lightgray;
@@ -18,7 +18,7 @@ body {
     width: 80%;
 }
 
-.search-icon {
+.wd-search-icon {
     color: darkgray;
     margin-right: 10px;
 }
@@ -31,38 +31,39 @@ body {
     flex-grow: 1;
 }
 
-.gear-icon {
+.wd-gear-icon {
     color: darkgray;
     margin-left: auto;
     margin-top: 10px;
 }
 
-.tab-list {
+.wd-tab-list {
     list-style-type: none;
-    padding: 0;
+    padding-right: 20px;
+    padding-left: 20px;
     display: flex;
     justify-content: space-between;
 }
 
-.tab {
+.wd-tab {
     border-bottom: 2px solid transparent;
 }
 
-.tab span.active {
+.wd-tab span.active {
     border-bottom: 3px solid lightskyblue;
     padding-bottom: 3px;
 }
 
-.image-container {
+.wd-image-container {
     position: relative;
     display: inline-block;
 }
 
-.image-container img {
+.wd-image-container img {
     width: 100%;
 }
 
-.image-container .text {
+.wd-image-container .wd-text {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -72,29 +73,29 @@ body {
     font-weight: bold;
 }
 
-.tuit-list {
+.wd-tuit-list {
     list-style-type: none;
-    padding: 0;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 
-.username {
+.wd-username {
     font-weight: bold;
 }
 
-.tuit-data {
+.wd-tuit-data {
     display: flex;
     margin: 5px 0 0 0;
     color: darkgrey;
     font-size: 10pt;
 }
 
-.tuit-data-container {
+.wd-tuit-data-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.elipsis-icon {
+.wd-elipsis-icon {
     color: darkgrey;
-    /* you can change this to any color you want */
 }
