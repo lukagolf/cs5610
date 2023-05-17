@@ -1,0 +1,100 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12pt;
+}
+
+.wd-padded-left-right {
+    display: flex;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: lightgray;
+    border-radius: 25px;
+    padding: 10px;
+    width: 80%;
+}
+
+.search-icon {
+    color: darkgray;
+    margin-right: 10px;
+}
+
+#searchInput {
+    border: none;
+    background: none;
+    outline: none;
+    color: darkgray;
+    flex-grow: 1;
+}
+
+.gear-icon {
+    color: darkgray;
+    margin-left: auto;
+    margin-top: 10px;
+}
+
+.tab-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tab {
+    border-bottom: 2px solid transparent;
+}
+
+.tab span.active {
+    border-bottom: 3px solid lightskyblue;
+    padding-bottom: 3px;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.image-container img {
+    width: 100%;
+}
+
+.image-container .text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: white;
+    padding: 20px;
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+.tuit-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.tuit-data {
+    display: flex;
+    margin: 5px 0 0 0;
+    color: darkgrey;
+    font-size: 10pt;
+}
+
+.tuit-data-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.elipsis-icon {
+    color: darkgrey;
+    /* you can change this to any color you want */
+}
