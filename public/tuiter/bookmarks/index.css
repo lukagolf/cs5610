@@ -1,0 +1,153 @@
+.wd-padded-left-right {
+    display: flex;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.wd-title-container {
+    display: flex;
+    align-items: center;
+}
+
+.wd-title {
+    display: flex;
+    color: black;
+    font-weight: bold;
+    font-size: 16pt;
+    padding-left: 30px;
+}
+
+.wd-arrow-icon {
+    color: black;
+}
+
+.wd-elipsis-icon {
+    color: darkgrey;
+    margin-left: auto;
+    margin-top: 6px;
+}
+
+.wd-profile-picture {
+    padding-right: 15px;
+    padding-left: 12px;
+}
+
+.wd-verified-icon {
+    padding-right: 4px;
+}
+
+.wd-tuit-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.wd-tuit-heading {
+    display: flex;
+}
+
+.wd-tuit-owner {
+    padding-right: 4px;
+}
+
+.wd-tuit-date {
+    padding-left: 4px;
+}
+
+.wd-tuit-title {
+    padding-left: 30px;
+}
+
+.wd-relative {
+    position: relative;
+}
+
+.wd-margin-zero p {
+    margin: 0;
+}
+
+.wd-tuit-heading-gray {
+    font-style: normal;
+    position: relative;
+    font-size: 10pt;
+    color: darkgray;
+}
+
+.wd-tuit-content-gray {
+    font-style: normal;
+    position: relative;
+    color: darkgray;
+    padding-left: 12px;
+    padding-right: 12px;
+    /* padding-bottom: 12px; */
+}
+
+.wd-padding-left {
+    padding-left: 70px;
+}
+
+hr {
+    margin: 0;
+    border: 0;
+    border-top: 1px solid lightgray;
+}
+
+.wd-post-content {
+    font-size: 15px;
+    color: white;
+    width: 506px;
+}
+
+.wd-thumbnail-image {
+    margin-top: 12px;
+    width: 506px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-top: 1px solid;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-color: lightgrey;
+    margin-bottom: -4px;
+}
+
+.wd-embed-content-container {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 506px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgray;
+}
+
+.wd-embed-title {
+    font-size: 15px;
+    color: white;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.wd-embed-text {
+    font-style: normal;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    padding-top: 0;
+}
+
+.wd-embed-icons-parent {
+    display: flex;
+    justify-content: space-evenly;
+    width: 506px;
+    margin: -7px;
+}
+
+.wd-embed-icon {
+    color: darkgray;
+}
+
+.wd-embed-icon-text {
+    padding-left: 12px;
+}
+
+.wd-embed-anchor {
+    text-decoration: none;
+}
