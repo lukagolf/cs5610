@@ -16,10 +16,10 @@
 .wd-search-container-bt {
     display: flex;
     align-items: center;
-    border-color: lightgray !important;
+    border: solid lightgray !important;
     border-radius: 25px;
-    padding: 10px;
-    width: 80%;
+    width: 100%;
+    height: 40px;
 }
 
 .wd-search-icon {
@@ -128,7 +128,6 @@
 .wd-image-text {
     color: white;
     font-size: 24px;
-    /* Bootstrap requires some SASS configuration that I don't think I have access to. */
     left: 10px;
     bottom: -5px;
 }
@@ -190,7 +189,7 @@
 
 .wd-suggested-parent-div {
     border: 1px solid;
-    border-color: darkgray;
+    border-color: lightgrey;
 }
 
 .wd-suggested-middle-text {
@@ -227,13 +226,18 @@
 }
 
 .wd-side-col-upper {
+    border-color: 1px solid lightgrey;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
 
 .wd-side-col {
+    border: 1px solid lightgrey;
+    width: 100%;
+}
+
+.wd-border {
     border: 1px solid darkgray;
-    width: 95%;
 }
 
 .wd-side-col-bottom {
@@ -247,4 +251,8 @@
 
 i {
     font-style: normal;
+}
+
+.wd-button {
+    width: relative;
 }
