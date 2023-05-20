@@ -64,6 +64,11 @@
     border-bottom: 2px solid transparent;
 }
 
+.wd-tab-other {
+    border-bottom: 2px solid transparent;
+    color: darkgray;
+}
+
 .wd-tab span.active {
     border-bottom: 3px solid lightskyblue;
     padding-bottom: 3px;
