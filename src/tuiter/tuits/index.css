@@ -1,0 +1,28 @@
+.wd-embed-icons-parent {
+    display: flex;
+    justify-content: space-evenly;
+    width: 506px;
+    margin: -7px;
+}
+
+.wd-embed-icon {
+    color: black;
+}
+
+.wd-embed-icon-text {
+    padding-left: 12px;
+}
+
+.wd-embed-anchor {
+    text-decoration: none;
+}
+
+.wd-indent-text {
+    color: black;
+}
+
+.wd-tuit-textbox {
+    font-size: 16px;
+    padding-left: 12px;
+    margin-left: 48px;
+}
