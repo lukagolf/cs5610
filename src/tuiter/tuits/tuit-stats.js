@@ -3,14 +3,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComment } from '@fortawesome/free-regular-svg-icons';
 import { faArrowsRotate, faShare, faHeart } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch } from "react-redux";
-import { likeTuit } from "../reducers/tuits-reducer";
+import { IncreaseLikes, DecreaseLikes } from "../reducers/tuits-reducer";
 
 const TuitStats = (
     { tuit }
 ) => {
     const dispatch = useDispatch();
-    var likeTuiterHandler = (id) => {
-        dispatch(likeTuit(id));
+    const likeTuiterHandler = (id) => {
+        dispatch(IncreaseLikes(id));
+    }
+    const dislikeTuiterHandler = (id) => {
+        dispatch(DecreaseLikes(id));
     }
 
     return (
@@ -26,7 +29,7 @@ const TuitStats = (
             <div className="col">
                 <FontAwesomeIcon
                     className="wd-heart-icon" icon={faHeart} color={tuit.liked ? "red" : "lightgray"}
-                    onClick={() => likeTuiterHandler(tuit._id)}
+                    onClick={() => tuit.liked ? dislikeTuiterHandler(tuit._id) : likeTuiterHandler(tuit._id)}
                 />
                 &nbsp;{tuit.likes}
             </div>

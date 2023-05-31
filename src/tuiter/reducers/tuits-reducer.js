@@ -28,23 +28,16 @@ const tuitsSlice = createSlice({
             state.tuits.splice(index, 1);
         },
 
-        likeTuit(state, action) {
-            switch (action.type) {
-                case 'LIKE_POST':
-                    return state.map(tuit =>
-                        tuit._id === action.payload
-                            ? { ...tuit, liked: true, likes: tuit.likes + 1 }
-                            : tuit
-                    );
-                case 'UNLIKE_POST':
-                    return state.map(tuit =>
-                        tuit._id === action.payload
-                            ? { ...tuit, liked: false, likes: tuit.likes - 1 }
-                            : tuit
-                    );
-                default:
-                    return state;
-            }
+        IncreaseLikes(state, action) {
+            const index = state.tuits.findIndex(tuit => tuit._id === action.payload);
+            state.tuits[index].likes += 1;
+            state.tuits[index].liked = true;
+        },
+
+        DecreaseLikes(state, action) {
+            const index = state.tuits.findIndex(tuit => tuit._id === action.payload);
+            state.tuits[index].likes -= 1;
+            state.tuits[index].liked = false;
         },
 
         createTuit(state, action) {
@@ -57,6 +50,6 @@ const tuitsSlice = createSlice({
     }
 });
 
-export const { createTuit, deleteTuit, likeTuit } = tuitsSlice.actions;
+export const { createTuit, deleteTuit, likeTuit, IncreaseLikes, DecreaseLikes } = tuitsSlice.actions;
 export default tuitsSlice.reducer;
 
