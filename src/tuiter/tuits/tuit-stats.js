@@ -3,17 +3,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComment } from '@fortawesome/free-regular-svg-icons';
 import { faArrowsRotate, faShare, faHeart } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch } from "react-redux";
-import { IncreaseLikes, DecreaseLikes } from "../reducers/tuits-reducer";
+import { increaseLikes, decreaseLikes } from "../reducers/tuits-reducer";
 
 const TuitStats = (
     { tuit }
 ) => {
     const dispatch = useDispatch();
     const likeTuiterHandler = (id) => {
-        dispatch(IncreaseLikes(id));
+        dispatch(increaseLikes(id));
     }
     const dislikeTuiterHandler = (id) => {
-        dispatch(DecreaseLikes(id));
+        dispatch(decreaseLikes(id));
     }
 
     return (
