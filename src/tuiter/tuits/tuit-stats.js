@@ -4,6 +4,34 @@ import { faComment } from '@fortawesome/free-regular-svg-icons';
 import { faArrowsRotate, faShare, faHeart } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch } from "react-redux";
 import { increaseLikes, decreaseLikes } from "../reducers/tuits-reducer";
+import { updateTuitThunk } from "../services/tuits-thunks";
+
+const TuitStats = (
+    { tuit }
+) => {
+    const dispatch = useDispatch();
+
+    return (
+        <>
+            <faHeart
+                className="text-danger"
+                onClick={() =>
+                    dispatch(updateTuitThunk({ ...tuit, likes: tuit.likes + 1 }))
+                }
+            />
+            <span className="ms-2">{tuit.likes}</span>
+        </>
+    );
+};
+export default TuitStats;
+
+/* import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faComment } from '@fortawesome/free-regular-svg-icons';
+import { faArrowsRotate, faShare, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { useDispatch } from "react-redux";
+import { increaseLikes, decreaseLikes } from "../reducers/tuits-reducer";
+
 
 const TuitStats = (
     { tuit }
@@ -39,4 +67,4 @@ const TuitStats = (
         </div>
     );
 };
-export default TuitStats;
+export default TuitStats; */
