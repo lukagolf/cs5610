@@ -3,7 +3,9 @@ import axios from 'axios';
 const TUITS_API = 'http://localhost:4000/api/tuits';
 
 export const createTuit = async (tuit) => {
+    console.log("inside tuit service", tuit)
     const response = await axios.post(TUITS_API, tuit)
+    console.log("inside tuit service from backend", response)
     return response.data;
 }
 

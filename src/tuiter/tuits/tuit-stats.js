@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComment } from '@fortawesome/free-regular-svg-icons';
 import { faArrowsRotate, faShare, faHeart } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch } from "react-redux";
-import { increaseLikes, decreaseLikes } from "../reducers/tuits-reducer";
 import { updateTuitThunk } from "../services/tuits-thunks";
 
 const TuitStats = (
@@ -12,15 +11,28 @@ const TuitStats = (
     const dispatch = useDispatch();
 
     return (
-        <>
-            <faHeart
-                className="text-danger"
-                onClick={() =>
-                    dispatch(updateTuitThunk({ ...tuit, likes: tuit.likes + 1 }))
-                }
-            />
-            <span className="ms-2">{tuit.likes}</span>
-        </>
+        <div className="row">
+            <div className="col">
+                <FontAwesomeIcon icon={faComment} />
+                &nbsp;&nbsp;{tuit.replies}
+            </div>
+            <div className="col">
+                <FontAwesomeIcon icon={faArrowsRotate} />
+                &nbsp;&nbsp;{tuit.retuits}
+            </div>
+            <div className="col">
+                <FontAwesomeIcon
+                    className="wd-heart-icon" icon={faHeart} color={tuit.liked ? "red" : "lightgray"}
+                    onClick={() => tuit.liked ?
+                        dispatch(updateTuitThunk({ ...tuit, likes: tuit.likes - 1, liked: false })) :
+                        dispatch(updateTuitThunk({ ...tuit, likes: tuit.likes + 1, liked: true }))}
+                />
+                <span className="ms-2">{tuit.likes}</span>
+            </div>
+            <div className="col">
+                <FontAwesomeIcon icon={faShare} />
+            </div>
+        </div>
     );
 };
 export default TuitStats;
