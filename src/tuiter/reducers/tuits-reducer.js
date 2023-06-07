@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import tuits from './tuits.json';
+// import tuits from './tuits.json';
 import { updateTuitThunk, createTuitThunk, deleteTuitThunk, findTuitsThunk } from "../services/tuits-thunks";
 
 const initialState = {
@@ -37,7 +37,7 @@ const tuitsSlice = createSlice({
         [createTuitThunk.fulfilled]:
             (state, { payload }) => {
                 state.loading = false
-                state.tuits.push({payload})
+                state.tuits.unshift(payload)
             },
         [deleteTuitThunk.fulfilled]:
             (state, { payload }) => {
@@ -61,35 +61,35 @@ const tuitsSlice = createSlice({
             },
     },
 
-    initialState: { tuits: tuits },
-    reducers: {
-        deleteTuit(state, action) {
-            const index = state.tuits
-                .findIndex(tuit =>
-                    tuit._id === action.payload);
-            state.tuits.splice(index, 1);
-        },
+    // initialState: { tuits: tuits },
+    // reducers: {
+    //     deleteTuit(state, action) {
+    //         const index = state.tuits
+    //             .findIndex(tuit =>
+    //                 tuit._id === action.payload);
+    //         state.tuits.splice(index, 1);
+    //     },
 
-        increaseLikes(state, action) {
-            const index = state.tuits.findIndex(tuit => tuit._id === action.payload);
-            state.tuits[index].likes += 1;
-            state.tuits[index].liked = true;
-        },
+    //     increaseLikes(state, action) {
+    //         const index = state.tuits.findIndex(tuit => tuit._id === action.payload);
+    //         state.tuits[index].likes += 1;
+    //         state.tuits[index].liked = true;
+    //     },
 
-        decreaseLikes(state, action) {
-            const index = state.tuits.findIndex(tuit => tuit._id === action.payload);
-            state.tuits[index].likes -= 1;
-            state.tuits[index].liked = false;
-        },
+    //     decreaseLikes(state, action) {
+    //         const index = state.tuits.findIndex(tuit => tuit._id === action.payload);
+    //         state.tuits[index].likes -= 1;
+    //         state.tuits[index].liked = false;
+    //     },
 
-        createTuit(state, action) {
-            state.tuits.unshift({
-                ...action.payload,
-                ...templateTuit,
-                _id: (new Date()).getTime(),
-            })
-        }
-    }
+    //     createTuit(state, action) {
+    //         state.tuits.unshift({
+    //             ...action.payload,
+    //             ...templateTuit,
+    //             _id: (new Date()).getTime(),
+    //         })
+    //     }
+    // }
 });
 
 export const { createTuit, deleteTuit, likeTuit, increaseLikes, decreaseLikes } = tuitsSlice.actions;

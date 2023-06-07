@@ -13,6 +13,7 @@ import whoReducer from "./reducers/who-reducer";
 import tuitsReducer from "./reducers/tuits-reducer";
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from "react-redux";
+import TuiterContext from "./context";
 const store = configureStore({
     reducer: {
         who: whoReducer, tuits: tuitsReducer,
@@ -24,6 +25,7 @@ const store = configureStore({
 function Tuiter() {
     return (
         <Provider store={store}>
+            <TuiterContext>
             <div>
                 <Nav />
                 <div className="row mt-2">
@@ -32,6 +34,7 @@ function Tuiter() {
                     </div>
                     <div className="col-10 col-md-10 col-lg-7 col-xl-6">
                         <Routes>
+                            <Route path="/" element={<HomeScreen />} />
                             <Route path="/home" element={<HomeScreen />} />
                             <Route path="/explore" element={<ExploreScreen />} />
                             <Route path="/bookmarks" element={<BookmarksScreen />} />
@@ -45,6 +48,7 @@ function Tuiter() {
                     </div>
                 </div>
             </div>
+            </TuiterContext>
         </Provider>
     );
 }

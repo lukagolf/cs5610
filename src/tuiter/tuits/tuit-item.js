@@ -17,6 +17,7 @@ const TuitItem = (
 
     return (
         <li className="list-group-item">
+            {/* <pre>{JSON.stringify(tuit, null, 2)}</pre> */}
             <div className="mb-3">
                 <img src={`/images/${tuit.image}`} alt={tuit.userName} className="wd-circular-icon" />
                 <i className="bi bi-x-lg float-end"

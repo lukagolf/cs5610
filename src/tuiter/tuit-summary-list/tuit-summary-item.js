@@ -5,9 +5,10 @@ const TuitSummaryItem = (
 ) => {
     return (
         <li className="list-group-item">
+            {/* <pre>{JSON.stringify(tuit, null, 2)}</pre> */}
             <div className="row">
                 <div className="col-10">
-                    <div>{tuit.userName} . {tuit.time}</div>
+                    <div>{tuit.username} . {tuit.time}</div>
                     <div className="fw-bolder">{tuit.topic}</div>
                     <div>{tuit.title}</div>
                 </div>
