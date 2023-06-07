@@ -57,12 +57,6 @@ const NavigationSidebar = () => {
                 <FontAwesomeIcon className="pe-2" icon={faMinusCircle} />
                 <span className="d-none d-xl-inline">{"more"}</span>
             </Link>
-            {/* {links.map((link, index) =>
-                <Link key={index} to={`/tuiter/${link}`} className={`list-group-item text-capitalize ${active === link ? "active" : ""}`}>
-                    <FontAwesomeIcon className="pe-2" icon={icons[index]} />
-                    <span className="d-none d-xl-inline">{link}</span>
-                </Link>
-            )} */}
         </div>
     );
 };

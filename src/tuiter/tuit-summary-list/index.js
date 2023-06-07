@@ -6,7 +6,6 @@ const TuitSummaryList = () => {
   const { tuits } = useSelector(state => state.tuits)
   return (
     <div>
-      {/* <pre>{JSON.stringify(tuits, null, 2)}</pre> */}
     <ul className="list-group">
       {
         tuits.map(tuit =>

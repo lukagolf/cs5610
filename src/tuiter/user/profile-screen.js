@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 import { profileThunk, logoutThunk, updateUserThunk }
     from "../services/auth-thunks";
-    
+
 function ProfileScreen() {
     const { currentUser } = useSelector((state) => state.user);
     const [profile, setProfile] = useState(currentUser);
@@ -42,7 +42,7 @@ function ProfileScreen() {
             <button
                 onClick={() => {
                     dispatch(logoutThunk());
-                    navigate("/login");
+                    navigate("/tuiter/login");
                 }}>                   Logout</button>
             <button onClick={save}>Save  </button>
         </div>);
