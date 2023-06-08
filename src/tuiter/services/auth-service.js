@@ -19,7 +19,8 @@ export const logout = async () => {
 
 export const profile = async () => {
     const response = await api.post(`${USERS_URL}/profile`);
-    return null;
+    console.log(response.data)
+    return response.data;
 };
 
 export const updateUser = async (user) => {
