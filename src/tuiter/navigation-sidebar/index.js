@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faHashtag, faBell, faEnvelope, faBookmark, faList, faUser, faMinusCircle }
+import { faHome, faHashtag, faBell, faEnvelope, faBookmark, faList, faUser, faMinusCircle, faSignIn, faUserPlus }
     from '@fortawesome/free-solid-svg-icons';
 import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -39,12 +39,12 @@ const NavigationSidebar = () => {
                 <span className="d-none d-xl-inline">{"lists"}</span>
             </Link>
             {!currentUser && <Link className={`list-group-item text-capitalize ${active === "login" ? "active" : ""}`} to="/tuiter/login">
-                <FontAwesomeIcon className="pe-2" icon={faList} />
+                <FontAwesomeIcon className="pe-2" icon={faSignIn} />
                 <span className="d-none d-xl-inline">{"login"}</span>
             </Link>
             }
             {!currentUser && <Link className={`list-group-item text-capitalize ${active === "register" ? "active" : ""}`} to="/tuiter/register">
-                <FontAwesomeIcon className="pe-2" icon={faList} />
+                <FontAwesomeIcon className="pe-2" icon={faUserPlus} />
                 <span className="d-none d-xl-inline">{"register"}</span>
             </Link>
             }
