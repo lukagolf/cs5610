@@ -40,6 +40,7 @@ function ProfileScreen() {
                                 ...profile, lastName: event.target.value,
                             };
                             setProfile(newProfile);
+                            console.log(newProfile);
                         }} />
                 </div></div>
             )}
