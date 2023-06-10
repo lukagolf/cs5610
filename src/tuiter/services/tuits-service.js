@@ -1,10 +1,9 @@
 import axios from 'axios';
 
-// const API_BASE = process.env.REACT_APP_API_BASE;
+const API_BASE = process.env.REACT_APP_SERVER_API_URL;
+const TUITS_API = `${API_BASE}/tuits`;
 // const API_BASE = "https://lj-tuiter-node-server-app.herokuapp.com/api";
-// const TUITS_API = `${API_BASE}/tuits`;
-//    const API_BASE = "http://localhost:4000/api"
-const TUITS_API = 'http://localhost:4000/api/tuits';
+// const TUITS_API = 'http://localhost:4000/api/tuits';
 
 export const createTuit = async (tuit) => {
     console.log(TUITS_API);
