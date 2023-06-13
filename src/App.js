@@ -4,18 +4,21 @@ import Tuiter from "./tuiter";
 import { BrowserRouter } from "react-router-dom";
 import { Routes, Route } from "react-router";
 import { Navigate } from "react-router-dom";
+// import AuthContext from "./tuiter/services/auth-context";
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="container">
-        <Routes>
-          <Route path="/" element={<Navigate to="/labs" />} />
-          <Route path="/labs/*" element={<Labs />} />
-          <Route path="/hello" element={<HelloWorld />} />
-          <Route path="/tuiter/*" element={<Tuiter />} />
-        </Routes>
-      </div>
+      {/* <AuthContext> */}
+        <div className="container">
+          <Routes>
+            <Route path="/" element={<Navigate to="/labs" />} />
+            <Route path="/labs/*" element={<Labs />} />
+            <Route path="/hello" element={<HelloWorld />} />
+            <Route path="/tuiter/*" element={<Tuiter />} />
+          </Routes>
+        </div>
+      {/* </AuthContext> */}
     </BrowserRouter>
   );
 }
