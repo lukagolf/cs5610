@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
-import { profileThunk } from "./users-thunks";
+import { profileThunk } from "./auth-thunks";
 function ProtectedRoute({ children }) {
     const [loading, setLoading] = useState(true);
     const dispatch = useDispatch();
