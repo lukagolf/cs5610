@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { useDispatch } from "react-redux";
 import { registerThunk } from "../services/auth-thunks";
+import { setUser, storeUserInLocalStorage } from "../reducers/auth-reducer";
 
 function RegisterScreen() {
     const [username, setUsername] = useState("");
@@ -9,10 +10,16 @@ function RegisterScreen() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const handleRegister = async () => {  
+    const handleRegister = async () => {
         try {
-            await dispatch(registerThunk({ username, password })); 
-            navigate("/tuiter/profile");
+            const actionResult = await dispatch(registerThunk({ username, password }));
+            if (registerThunk.fulfilled.match(actionResult)) {
+                dispatch(setUser(actionResult.payload));
+                dispatch(storeUserInLocalStorage(actionResult.payload));
+                navigate("/tuiter/profile");
+            } else {
+                throw new Error(actionResult.error.message);
+            }
         } catch (e) {
             alert(e);
         }
@@ -32,8 +39,8 @@ function RegisterScreen() {
                     onChange={(event) => setPassword(event.target.value)} />
             </div>
             <button className="btn btn-primary mt-2"
-                onClick={handleRegister}>  
-                Register  
+                onClick={handleRegister}>
+                Register
             </button>
         </div>
     );

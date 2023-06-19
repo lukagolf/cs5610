@@ -7,25 +7,15 @@ import BookmarksScreen from "./bookmarks-screen";
 import ProfileScreen from "./user/profile-screen";
 import LoginScreen from "./user/login-screen";
 import RegisterScreen from "./user/register-screen";
-import authReducer from "./reducers/auth-reducer";
 import WhoToFollowList from "./who-to-follow-list/index";
-import whoReducer from "./reducers/who-reducer";
-import tuitsReducer from "./reducers/tuits-reducer";
-import { configureStore } from '@reduxjs/toolkit';
-import { Provider } from "react-redux";
 import TuiterContext from "./context";
 import ProtectedRoute from "./services/protected-route";
-const store = configureStore({
-    reducer: {
-        who: whoReducer, tuits: tuitsReducer,
-        user: authReducer
-    },
-});
+
 
 
 function Tuiter() {
     return (
-        <Provider store={store}>
+        <>
             <TuiterContext>
                 <div>
                     <Nav />
@@ -53,7 +43,7 @@ function Tuiter() {
                     </div>
                 </div>
             </TuiterContext>
-        </Provider>
+        </>
     );
 }
 export default Tuiter;

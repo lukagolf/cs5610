@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 import { profileThunk, logoutThunk, updateUserThunk }
     from "../services/auth-thunks";
+import { removeUserFromLocalStorage } from "../reducers/auth-reducer";
 
 function ProfileScreen() {
     const { currentUser } = useSelector((state) => state.user);
@@ -10,6 +11,23 @@ function ProfileScreen() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const save = () => { console.log(profile); dispatch(updateUserThunk(profile)); };
+
+    const handleLogout = async () => {
+        try {
+            const actionResult = await dispatch(logoutThunk());
+            if (logoutThunk.fulfilled.match(actionResult)) {
+                dispatch(removeUserFromLocalStorage());
+                navigate("/tuiter/login");
+            } else {
+                throw new Error(actionResult.error.message);
+            }
+        }
+        catch (e) {
+            alert(e);
+        }
+    };
+
+
     useEffect(() => {
         const getProfile = async () => {
             const { payload } = await dispatch(profileThunk());
@@ -46,10 +64,7 @@ function ProfileScreen() {
                 </div></div>
             )}
             <button
-                onClick={() => {
-                    dispatch(logoutThunk());
-                    navigate("/tuiter/login");
-                }}>                   Logout</button>
+                onClick={handleLogout}>Logout</button>
             <button onClick={save}>Save  </button>
         </div>);
 }

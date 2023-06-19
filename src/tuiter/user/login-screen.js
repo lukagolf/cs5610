@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { useDispatch } from "react-redux";
 import { loginThunk } from "../services/auth-thunks";
+import { setUser, storeUserInLocalStorage } from "../reducers/auth-reducer";
+
 function LoginScreen() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -9,11 +11,14 @@ function LoginScreen() {
     const dispatch = useDispatch();
     const handleLogin = async () => {
         try {
-            await dispatch(loginThunk({ username, password }));
-            // setTimeout(()=> {
-            //     navigate("/tuiter/profile");
-            //    }, 2000);
-            navigate("/tuiter/profile");
+            const actionResult = await dispatch(loginThunk({ username, password }));
+            if (loginThunk.fulfilled.match(actionResult)) {
+                dispatch(setUser(actionResult.payload));
+                dispatch(storeUserInLocalStorage(actionResult.payload));
+                navigate("/tuiter/profile");
+            } else {
+                throw new Error(actionResult.error.message);
+            }
         } catch (e) {
             alert(e);
         }
